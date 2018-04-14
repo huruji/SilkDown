@@ -31,7 +31,6 @@
 			</li>
 		</ul>
 		<div class="copy-right">
-			Copyright © 2016 Jrain Lau
 		</div>
 	</div>
 </template>

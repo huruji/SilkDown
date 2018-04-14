@@ -67,12 +67,12 @@
 				</button>
 			</li>
 			<li>
-				<button title="Github" @click='redirect("https://github.com/jrainlau/markcook")'>
+				<button title="Github" @click='redirect("https://github.com/huruji/SilkDown")'>
 					<i class="fa fa-github"></i>
 				</button>
 			</li>
 			<li>
-				<button title="Question" @click='redirect("https://github.com/jrainlau/markcook/issues")'>
+				<button title="Question" @click='redirect("https://github.com/huruji/SilkDown")'>
 					<i class="fa fa-question"></i>
 				</button>
 			</li>
