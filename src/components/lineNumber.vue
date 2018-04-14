@@ -59,7 +59,7 @@
 				.line-content{
 					font-size: 18px;
     				line-height: 26px;
-    				margin: 0 17px 0 55px;
+    				margin: 0 20px 0 55px;
     				padding: 0;
     				display: inline-block;
     				word-wrap: break-word;
