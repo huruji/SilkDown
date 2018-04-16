@@ -61,6 +61,7 @@
     	display:none;
     }
 	div.inputer-container {
+		transition: all ease 1s;
 		position:relative;
 		width: 50%;
 		height: 100%;
