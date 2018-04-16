@@ -52,6 +52,11 @@
 				</button>
 			</li>
 			<li>
+				<button title="Strikethrough" @click='insert("~~~~")'>
+					<i class="fa fa-strikethrough"></i>
+				</button>
+			</li>
+			<li>
 				<button title="Table" @click='insert("\n\n| title | title | title |\n| --- | --- | --- |\n| item | item | item |")'>
 					<i class="fa fa-th"></i>
 				</button>
@@ -136,6 +141,9 @@
 						case '![Img](http://example.com/)':
 							newContent = setContent(inputer, oldContent, newContent, content, endPosition, 7, 1)
 							break
+						case '~~~~':
+							newContent = setContent(inputer, oldContent, newContent, content, endPosition,2,2)
+							break
 						default:
 							newContent = oldContent.substring(0, endPosition) + content + oldContent.substring(endPosition, oldContent.length)
 							inputer.value = newContent
@@ -157,6 +165,9 @@
 							break
 						case '![Img](http://example.com/)':
 							newContent = upDateContent(inputer, oldContent, newContent, startPosition, endPosition, '![', '](http://example.com/)')
+							break
+                        case '~~~~':
+							newContent = upDateContent(inputer, oldContent, newContent, startPosition, endPosition, '~~', '~~')
 							break
 						default:
 							return false
