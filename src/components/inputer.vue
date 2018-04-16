@@ -34,9 +34,7 @@
 			syncStroll (e) {
 				let outputer = document.querySelector('.outputer')
 				let lineContainer = document.querySelector('.line-container')
-				console.log(e.target.scrollTop);
 				outputer.scrollTop = e.target.scrollTop
-				console.log(lineContainer.style.top );
 				lineContainer.style.top = -e.target.scrollTop + 'px';
 			},
 			dragging (e) {
