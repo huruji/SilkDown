@@ -13,7 +13,7 @@
 
 <script>
 import sideMenu from './components/sideMenu.vue'
-import navBar from './components/navBar.vue'
+import navBar from './containers/navBar.vue'
 import inputer from './components/inputer.vue'
 import outputer from './components/outputer.vue'
 

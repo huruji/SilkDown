@@ -1,22 +1,23 @@
 <template>
 	<li>
-		<button title="Italic" @click='insert'>
-			<i class="fa fa-italic"></i>
-		</button>
-	</li>
+				<button title="Strikethrough" @click='insert'>
+					<i class="fa fa-strikethrough"></i>
+				</button>
+			</li>
 </template>
 
 <script>
     import insertContent from './../../utils/insertContent.js'
+
 	export default{
 		methods: {
 			insert() {
 				let insertDes = {
-					content: '*Italic*',
-					startSymbolLen: 1,
-					endSymbolLen: 1,
-					updateStart: '*',
-					updateEnd:	'*'
+					content: '~~~~',
+					startSymbolLen: 2,
+					endSymbolLen: 2,
+					updateStart: '~~',
+					updateEnd:	'~~'
 				}
 
                 insertContent(insertDes);

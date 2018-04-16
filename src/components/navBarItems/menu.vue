@@ -9,7 +9,9 @@
 <script>
 	export default{
 		methods: {
-			this.$store.dispatch('showMenu');
+			showMenu() {
+				this.$store.dispatch('showMenu');
+			}
 		}
 	}
 </script>

@@ -7,27 +7,24 @@
 </template>
 
 <script>
+	import insertContent from './../../utils/insertContent.js'
+
 	export default{
+		methods: {
 			insert() {
 				let insertDes = {
 					content: '`code`',
 					startSymbolLen: 1,
-					endSymbolLen: 1
+					endSymbolLen: 1,
+					updateStart: '`',
+					updateEnd:	'`'					
 				}
 
-                let inputer = document.querySelector('#inputer')
-				let startPosition = inputer.selectionStart
-				let endPosition = inputer.selectionEnd
-				let oldContent = inputer.value
-
-				inputer.focus()
-
-				const newContent = oldContent.subString(0, startPosition) + insertDes.content + oldContent.subString(endPosition, oldContent.length)
-
-				inputer.setSelectionRange(startPosition + insertDes.startSymbolLen, startPosition + insertDes.length - endSymbolLen)
-
-				this.$store.dispatch('textInput', newContent)
-				this.$store.dispatch('saveToCache')
+                insertContent(insertDes);
 			}
+		}
 	}
 </script>
+<style>
+	
+</style>
