@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-const highlight = require('highlight.js')
+const hljs = require('highlight.js')
 const md = require('markdown-it')({
 	highlight: function (str, lang) {
     if (lang && hljs.getLanguage(lang)) {
