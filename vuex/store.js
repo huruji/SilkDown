@@ -2,13 +2,17 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 const highlight = require('highlight.js')
-const marked = require('marked')
+const md = require('markdown-it')({
+	highlight: function (str, lang) {
+    if (lang && hljs.getLanguage(lang)) {
+      try {
+        return hljs.highlight(lang, str).value;
+      } catch (__) {}
+    }
+    return '';
+}});
+md.use(require('markdown-it-checkbox'));
 
-marked.setOptions({
-  highlight: function (code) {
-    return highlight.highlightAuto(code).value
-  }
-})
 
 Vue.use(Vuex)
 
@@ -172,7 +176,7 @@ export default new Vuex.Store({
 			return content
 		},
 		articleMd: (state, getters) => {
-			return marked(getters.articleRaw)
+			return md.render(getters.articleRaw)
 		},
 		articleList: state => {
 			return state.articleList
