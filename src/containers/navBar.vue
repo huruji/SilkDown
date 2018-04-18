@@ -9,6 +9,7 @@
 			<my-code/>
 			<my-image/>
 			<list/>
+			<tasks/>
 			<headline/>
 			<underline/>
 			<strikethrough/>
@@ -31,6 +32,7 @@
 	import Italic from './../components/navBarItems/italic.vue'
 	import Link from './../components/navBarItems/link.vue'
 	import List from './../components/navBarItems/list.vue'
+	import Tasks from './../components/navBarItems/tasks.vue'
 	import ShowMenu from './../components/navBarItems/menu.vue'
 	import Preview from './../components/navBarItems/preview.vue'
 	import Question from './../components/navBarItems/question.vue'
@@ -50,6 +52,7 @@
 			Italic,
 			Link,
 			List,
+			Tasks,
 			ShowMenu,
 			Preview,
 			Question,
