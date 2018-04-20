@@ -1,5 +1,5 @@
 <template>
-	<li>
+	<li class="navbar-item">
 		<button title="Image" @click='insert'>
 			<i class="fa fa-picture-o"></i>
 		</button>

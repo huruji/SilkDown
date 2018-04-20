@@ -1,5 +1,5 @@
 <template>
-	<li>
+	<li class="navbar-item">
 		<button title="Headline" @click='insert("\n# ")'>
 			<i class="fa fa-header"></i>
 		</button>

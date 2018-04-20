@@ -1,5 +1,5 @@
 <template>
-	<li>
+	<li class="navbar-item">
 		<button title="Quote" @click='insert("\n> ")'>
 			<i class="fa fa-quote-left"></i>
 		</button>

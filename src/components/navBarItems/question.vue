@@ -1,5 +1,5 @@
 <template>
-	<li>
+	<li class="navbar-item">
 		<button title="Question" @click='redirect("https://github.com/huruji/SilkDown")'>
 			<i class="fa fa-question"></i>
 		</button>

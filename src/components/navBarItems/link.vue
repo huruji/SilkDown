@@ -1,5 +1,5 @@
 <template>
-	<li>
+	<li class="navbar-item">
 		<button title="Link" @click='insert'>
 			<i class="fa fa-link"></i>
 		</button>

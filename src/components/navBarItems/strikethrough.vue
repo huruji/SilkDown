@@ -1,5 +1,5 @@
 <template>
-	<li>
+	<li class="navbar-item">
 				<button title="Strikethrough" @click='insert'>
 					<i class="fa fa-strikethrough"></i>
 				</button>

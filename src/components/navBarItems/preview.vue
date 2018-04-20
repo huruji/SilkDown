@@ -1,5 +1,5 @@
 <template>
-	<li>
+	<li class="navbar-item">
 		<button title="Preview" @click='showPreview' :class="{'active': preview}">
 			<i class="fa fa-columns"></i>
 		</button>

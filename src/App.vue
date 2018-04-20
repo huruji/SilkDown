@@ -2,7 +2,7 @@
   <div id="app" :class="[showMenu ? 'show-menu' : '', 'app']">
     <sideMenu />
     <main>
-      <navBar /> 
+      <navBar />
       <section>
         <inputer />
         <outputer />

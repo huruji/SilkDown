@@ -1,17 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
-const hljs = require('highlight.js')
-const md = require('markdown-it')({
-	highlight: function (str, lang) {
-    if (lang && hljs.getLanguage(lang)) {
-      try {
-        return hljs.highlight(lang, str).value;
-      } catch (__) {}
-    }
-    return '';
-}});
-md.use(require('markdown-it-checkbox'));
+import twemoji from 'twemoji'
+import md from './../src/markdownConf.js'
 
 
 Vue.use(Vuex)

@@ -1,10 +1,10 @@
 <template>
 	<nav class="navbar">
-		<ul>
+		<ul class="navbar-item-container">
 			<show-menu/>
 			<bold/>
 			<italic/>
-			<link/>
+			<my-link/>
 			<quote/>
 			<my-code/>
 			<my-image/>
@@ -14,6 +14,7 @@
 			<underline/>
 			<strikethrough/>
 			<my-table/>
+			<emoji/>
 			<fullscreen/>
 			<preview/>
 			<github/>
@@ -25,12 +26,13 @@
 <script>
 	import Bold from './../components/navBarItems/bold.vue'
 	import MyCode from './../components/navBarItems/code.vue'
+	import Emoji from './../components/navBarItems/emoji.vue'
 	import Fullscreen from './../components/navBarItems/fullscreen.vue'
 	import Github from './../components/navBarItems/github.vue'
 	import Headline from './../components/navBarItems/headline.vue'
 	import MyImage from './../components/navBarItems/image.vue'
 	import Italic from './../components/navBarItems/italic.vue'
-	import Link from './../components/navBarItems/link.vue'
+	import MyLink from './../components/navBarItems/link.vue'
 	import List from './../components/navBarItems/list.vue'
 	import Tasks from './../components/navBarItems/tasks.vue'
 	import ShowMenu from './../components/navBarItems/menu.vue'
@@ -45,12 +47,13 @@
 		components: {
 			Bold,
 			MyCode,
+			Emoji,
 			Fullscreen,
 			Github,
 			Headline,
 			MyImage,
 			Italic,
-			Link,
+			MyLink,
 			List,
 			Tasks,
 			ShowMenu,
@@ -67,18 +70,17 @@
 <style lang="less">
 	nav.navbar {
 		box-sizing: border-box;
-		position: relative;
 		height: 45px;
 		background-color: #009688;
 		box-shadow: 4px 3px 3px #aaa;
 		z-index: 20;
-		ul {
+		ul.navbar-item-container {
 			height: 45px;
 			min-width: 1000px;
 			padding: 0;
 			margin: 0;
 			list-style: none;
-			li {
+			li.navbar-item {
 				height: 45px;
 				float: left;
 				&:first-child {

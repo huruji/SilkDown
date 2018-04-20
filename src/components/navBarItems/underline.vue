@@ -1,5 +1,5 @@
 <template>
-	<li>
+	<li class="navbar-item">
 		<button title="Underline" @click='insert("\n\n---\n\n")'>
 			<i class="fa fa-underline"></i>
 		</button>

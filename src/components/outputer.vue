@@ -23,7 +23,7 @@
   }
 </script>
 
-<style scoped lang="less">
+<style lang="less">
 	.outputer {
     transition: all ease 1s;
   	box-sizing: border-box;
@@ -41,6 +41,12 @@
     white-space: normal;
     overflow-y: scroll;
     word-wrap: break-word;
+    img{
+      max-width:100%;
+    }
+    .emoji{
+      height: 1em;
+    }
 	}
 
   div.outputer.fullscreen{
@@ -51,4 +57,5 @@
       width:100%;
       max-width:1200px;
   }
+
 </style>

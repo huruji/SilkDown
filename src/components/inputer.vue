@@ -72,7 +72,7 @@
 			height:100%;
 			textarea {
 				position:relative;
-				z-index:99999;
+				z-index:100;
 				box-sizing: border-box;
 				height: 100%;
 				width: 100%;
