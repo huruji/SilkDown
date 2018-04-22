@@ -1,5 +1,5 @@
 <template>
-	<div class="outputer" v-html='ripeTxt' :class="[fullscreen ? 'fullscreen' : '',preview ? 'fullscreen' : '', theme]"></div>
+	<div class="outputer" v-html='ripeTxt' :class="[fullscreen ? 'fullscreen' : '',preview ? 'preview' : '', theme]"></div>
 </template>
 
 <script>

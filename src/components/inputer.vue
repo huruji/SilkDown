@@ -1,5 +1,5 @@
 <template>
-	<div class="inputer-container" :class="[fullscreen ? 'fullscreen' : '',preview ? 'fullscreen' : '', theme]">
+	<div class="inputer-container" :class="[fullscreen ? 'fullscreen' : '',preview ? 'preview' : '', theme]">
 		<div class="inputer-content">
 			<textarea id="inputer" :value='rawTxt' @input='inputting' @scroll='syncStroll' @drop.stop.prevent='dragging' autofocus>
 			</textarea>
