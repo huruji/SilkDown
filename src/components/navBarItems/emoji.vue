@@ -43,7 +43,7 @@
 			emojiSymbol: function() {
 				let symbol = []
 
-				symbol = symbol.concat(emojiConf.people,emojiConf.nature)
+				symbol = symbol.concat(emojiConf.people,emojiConf.nature, emojiConf.object, emojiConf.place, emojiConf.symbol)
 
 				return symbol;
 			},
@@ -112,7 +112,6 @@
     	}
 	.navbar-emoji-container{
 		position:absolute;
-		color:#fff;
 		z-index: 1000;
 		width: 440px;
 		height:235px;
@@ -172,6 +171,7 @@
 			padding: 0 20px;
 			width:400px;
 			list-style: none;
+			align-content: flex-start;
 			li.navbar-emoji-container-item{
 				width:32px;
 				height:32px;
