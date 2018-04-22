@@ -100,16 +100,6 @@
 </script>
 
 <style  lang="less">
-	.navbar-emoji:after{
-    		content:"";
-    		position:absolute;
-    		width:0px;
-    		height: 0px;
-    		border: 20px solid #fefefe;
-    		border-top-color: transparent;
-    		border-right-color: transparent;
-    		border-left-color: transparent;
-    	}
 	.navbar-emoji-container{
 		position:absolute;
 		z-index: 1000;
@@ -122,16 +112,6 @@
     	top: 50px;
     	border-radius: 5px;
     	border: 1px solid #ccc;
-   //  	&:before{
-			// content:"";
-   //  		position:absolute;
-   //  		width:0px;
-   //  		height: 0px;
-   //  		border: 20px solid #fefefe;
-   //  		border-top-color: transparent;
-   //  		border-right-color: transparent;
-   //  		border-left-color: transparent;    		
-   //  	}
 		div{
 			display: flex;
 			min-width:100%;
