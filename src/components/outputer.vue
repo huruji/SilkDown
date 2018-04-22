@@ -42,10 +42,13 @@
     overflow-y: scroll;
     word-wrap: break-word;
     img{
-      max-width:100%;
+      max-width: 100%;
+      margin: 0 auto;
+      display: block;
     }
     .emoji{
       height: 1em;
+      display: inline;
     }
 	}
 

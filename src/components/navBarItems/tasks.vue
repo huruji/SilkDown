@@ -13,9 +13,9 @@
 		methods: {
 			insert() {
 				let insertDes = {
-					content: '- [ ] ',
+					content: '- [ ] checked list ',
 					startSymbolLen: 6,
-					endSymbolLen: 0,
+					endSymbolLen: 1,
 					updateStart: '- [ ] ',
 					updateEnd:	''
 				}
