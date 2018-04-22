@@ -1,5 +1,5 @@
 <template>
-	<div class="menu">
+	<div :class="['menu', theme]" >
 		<h1>
 			<img src="../../img/logo.png" alt="">
 		</h1>
@@ -52,6 +52,9 @@
 			},
 			titleMd () {
 				return this.$store.getters.articleRaw.split('\n')[0] + '.md'
+			},
+			theme(){
+				return this.$store.state.theme;
 			}
 		},
 		methods: {
@@ -93,15 +96,13 @@
 	}
 </script>
 
-<style scoped lang="less">
+<style scope lang="less">
 	.menu {
 		box-sizing: border-box;
 		position: relative;
 		float: left;
 		height: 100%;
 		width: 220px;
-		box-shadow: 4px 5px 3px #aaa;
-		background-color: #f5f5f5;
 		h1 {
 			margin: 0;
 			height: 75px;
@@ -156,12 +157,7 @@
 						}
 					}
 				}
-				&.current {
-					color: #616161;
-					border-left: 6px solid #009688;
-				}
 				&:hover {
-					background: #eee;
 					.delete-btn {
 						display: inline-block;
 					}
@@ -173,14 +169,10 @@
 			margin: 0;
 			list-style: none;
 			li {
-				color: #616161;
 				transition: all ease .3s;
 				padding: 0 5px;
 				height: 55px;
 				line-height: 55px;
-				&:hover {
-					background: #e0e0e0;
-				}
 				&:active {
 					background: #bdbdbd;
 				}
@@ -217,6 +209,46 @@
 			font-size: 12px;
 			text-align: center;
 			color: #9E9E9E;
+		}
+	}
+
+
+	// theme-day
+
+	.menu.theme-day{
+		box-shadow: 4px 5px 3px #aaa;
+		background-color: #f5f5f5;
+		.files li:hover{
+			background: #eee;
+		}
+
+		.options li:hover{
+			background: #e0e0e0;
+		}
+		.options li{
+			color: #616161;
+		}
+		.files li.current {
+			color: #616161;
+			border-left: 6px solid #009688;
+		}
+	}
+	// theme-night
+	.menu.theme-night{
+		background: #3d3d3d;
+		box-shadow: 4px 5px 3px #1f1f1f;
+		.files li:hover{
+			background: #565656;
+		}
+		.options li:hover{
+			background: #565656;
+		}
+		.options li{
+			color: #b3b3b3;
+		}
+		.files li.current {
+			color: #b3b3b3;
+			border-left: 6px solid  #797979;
 		}
 	}
 </style>

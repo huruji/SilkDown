@@ -1,5 +1,5 @@
 <template>
-	<nav class="navbar">
+	<nav :class="['nav', 'navbar', theme]">
 		<ul class="navbar-item-container">
 			<show-menu/>
 			<bold/>
@@ -15,6 +15,7 @@
 			<strikethrough/>
 			<my-table/>
 			<emoji/>
+			<theme/>
 			<fullscreen/>
 			<preview/>
 			<github/>
@@ -41,9 +42,15 @@
 	import Quote from './../components/navBarItems/quote.vue'
 	import Strikethrough from './../components/navBarItems/strikethrough.vue'
 	import MyTable from './../components/navBarItems/table.vue'
+	import Theme from './../components/navBarItems/theme.vue'
 	import Underline from './../components/navBarItems/underline.vue'
 
 	export default {
+		computed: {
+			theme() {
+      			return this.$store.state.theme
+    		}
+		},
 		components: {
 			Bold,
 			MyCode,
@@ -62,6 +69,7 @@
 			Quote,
 			Strikethrough,
 			MyTable,
+			Theme,
 			Underline
 		}
 	}
@@ -71,8 +79,6 @@
 	nav.navbar {
 		box-sizing: border-box;
 		height: 45px;
-		background-color: #009688;
-		box-shadow: 4px 3px 3px #aaa;
 		z-index: 20;
 		ul.navbar-item-container {
 			height: 45px;
@@ -83,12 +89,6 @@
 			li.navbar-item {
 				height: 45px;
 				float: left;
-				&:first-child {
-					border-right: 2px solid #00897B;
-				}
-				&:nth-last-child(2) {
-					border-left: 2px solid #00897B;
-				}
 				button {
 					height: 45px;
 					width: 45px;
@@ -96,12 +96,6 @@
 					background: none;
 					outline: none;
 					transition: all ease .3s;
-					&.active{
-						background: #00796B;
-					}
-					&:hover {
-						background: #00897B;
-					}
 					&:active {
 						background: #00796B;
 					}
@@ -109,6 +103,62 @@
 						color: #fff;
 						font-size: 18px;
 					}
+				}
+			}
+		}
+	}
+
+	// theme-day
+	nav.navbar.theme-day{
+		background-color: #009688;
+		box-shadow: 4px 3px 3px #aaa;
+		ul.navbar-item-container {color: #fff;
+			li.navbar-item {
+				button{
+					&:hover{
+						background: #00897B;
+					}
+					.fa{
+						color: #fff;
+					}
+					&.active{
+						background: #00796B;
+					}
+				}
+
+				&:first-child {
+					border-right: 2px solid #00897B;
+				}
+				&:nth-last-child(2) {
+					border-left: 2px solid #00897B;
+				}
+			}
+		}
+	}
+
+	// theme-night
+	nav.navbar.theme-night{
+		background-color: #232323;
+		box-shadow: 4px 3px 3px #1f1f1f;
+		ul.navbar-item-container {
+			li.navbar-item {
+				button{
+					&:hover{
+						background: #3c3c3c;
+					}
+					.fa{
+						color: #888;
+					}
+					&.active{
+						background: #3c3c3c;
+					}
+				}
+
+				&:first-child{
+					border-right: 2px solid #3e3c3c;
+				}
+				&:nth-last-child(2){
+					border-left: 2px solid #3e3c3c;
 				}
 			}
 		}

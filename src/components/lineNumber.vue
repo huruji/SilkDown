@@ -30,7 +30,6 @@
 		width: 100%;
 		margin:0;
 		padding-top:15px;
-		background:#cecece;
 		z-index:10;
 		.line-bar{
 			position: absolute;

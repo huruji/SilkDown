@@ -33,9 +33,22 @@ export default new Vuex.Store({
 				content: 'Untitled\n---\n',
 				current: true
 			}
-		]
+		],
+		theme: null
 	},
 	mutations: {
+		CHANGE_THEME(state){
+			if(state.theme === 'theme-day') {
+				state.theme = 'theme-night'
+			} else {
+				state.theme = 'theme-day'
+			}
+			localStorage.setItem('theme', state.theme);
+		},
+		INITILIZE(state){
+			state.theme = localStorage.getItem('theme') ? localStorage.getItem('theme') : 'theme-day';
+			localStorage.setItem('theme', state.theme);
+		},
 		SHOW_MENU (state) {
 			state.showMenu = !state.showMenu
 		},

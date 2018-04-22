@@ -1,5 +1,5 @@
 <template>
-	<div class="inputer-container" :class="{'fullscreen': fullscreen, 'preview': preview}">
+	<div class="inputer-container" :class="[fullscreen ? 'fullscreen' : '',preview ? 'fullscreen' : '', theme]">
 		<div class="inputer-content">
 			<textarea id="inputer" :value='rawTxt' @input='inputting' @scroll='syncStroll' @drop.stop.prevent='dragging' autofocus>
 			</textarea>
@@ -24,7 +24,10 @@
 			},
 			preview() {
 				return this.$store.state.preview;
-			}
+			},
+			theme() {
+      			return this.$store.state.theme
+    		}
 		},
 		methods: {
 			inputting (e) {
@@ -80,11 +83,9 @@
 	    		padding: 15px 15px 15px 10px;
 	    		resize: none;
 	    		border: none;
-	    		background-color: #f5f5f5;
 	    		outline: none;
 	    		font-family: inherit;
 	    		font-size: 18px;
-	    		color: #616161;
 	    		box-shadow: 4px 5px 3px #aaa;
 	    		transition: all ease .3s;
 	    		line-height:26px;
@@ -97,8 +98,37 @@
     		height: 100%;
     		top: 0;
     		left: 0;
-    		background: #cecece;
 		}
+		}
+	}
+
+	// theme-day
+	div.inputer-container.theme-day {
+		div.inputer-content textarea{
+			background-color: #f5f5f5;
+			color: #616161;
+		}
+		div.line-container{
+			background:#cecece;
+
+			div.inputer-content:after{
+				background:#cecece;
+			}
+		}
+	}
+
+	// theme-night
+	div.inputer-container.theme-night {
+		div.inputer-content textarea{
+			background-color: #3d3d3d;
+			color: #b3b3b3;
+		}
+		div.line-container{
+			background: #232323;
+
+			div.inputer-content:after{
+				background: #232323;
+			}
 		}
 	}
 </style>

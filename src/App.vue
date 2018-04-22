@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :class="[showMenu ? 'show-menu' : '', 'app']">
+  <div id="app" :class="[showMenu ? 'show-menu' : '', 'app', theme]">
     <sideMenu />
     <main>
       <navBar />
@@ -10,7 +10,6 @@
     </main>
   </div>
 </template>
-
 <script>
 import sideMenu from './components/sideMenu.vue'
 import navBar from './containers/navBar.vue'
@@ -30,7 +29,13 @@ export default {
   computed: {
     showMenu () {
       return this.$store.state.showMenu
+    },
+    theme() {
+      return this.$store.state.theme
     }
+  },
+  created: function(){
+    this.$store.commit('INITILIZE');
   }
 }
 </script>
@@ -75,7 +80,6 @@ export default {
       }
     }
   }
-
   *::-webkit-scrollbar {
       display: block;
       width: 5px;
@@ -87,5 +91,35 @@ export default {
   }
   *::-webkit-scrollbar-thumb:hover {
       background: #BDBDBD;
+  }
+
+  // theme-day
+  .app.theme-day {
+    *::-webkit-scrollbar {
+      background: #FAFAFA;
+    }
+    *::-webkit-scrollbar-thumb {
+      background: #E0E0E0;
+    }
+    *::-webkit-scrollbar-thumb:hover {
+      background: #BDBDBD;
+    }
+
+  }
+
+  // theme-night
+  .app.theme-night {
+    main{
+      background-color: #2d2d2d;
+    }
+    ::-webkit-scrollbar {
+      background: #1f1f1f;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #777;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
   }
 </style>

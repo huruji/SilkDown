@@ -1,5 +1,5 @@
 <template>
-	<div class="outputer" v-html='ripeTxt' :class="{'fullscreen': fullscreen, 'preview': preview}"></div>
+	<div class="outputer" v-html='ripeTxt' :class="[fullscreen ? 'fullscreen' : '',preview ? 'fullscreen' : '', theme]"></div>
 </template>
 
 <script>
@@ -18,6 +18,9 @@
       },
       preview() {
         return this.$store.state.preview;
+      },
+      theme() {
+        return this.$store.state.theme;
       }
     }
   }
@@ -32,12 +35,9 @@
     padding: 15px;
     resize: none;
     border: none;
-    background-color: #f5f5f5;
     outline: none;
     font-family: inherit;
     font-size: 18px;
-    color: #616161;
-    box-shadow: 4px 5px 3px #aaa;
     white-space: normal;
     overflow-y: scroll;
     word-wrap: break-word;
@@ -61,4 +61,18 @@
       max-width:1200px;
   }
 
+
+   // theme-day
+  .outputer.theme-day{
+    background-color: #f5f5f5;
+    color: #616161;
+    box-shadow: 4px 5px 3px #aaa;
+  }
+
+  // theme-night
+  .outputer.theme-night{
+    background-color: #4d4d4d;
+    color: #b3b3b3;
+    box-shadow: 4px 5px 3px #1f1f1f;
+  }
 </style>
