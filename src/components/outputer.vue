@@ -28,7 +28,7 @@
 
 <style lang="less">
 	.outputer {
-    transition: all ease 1s;
+    transition: all ease .5s;
   	box-sizing: border-box;
   	height: 100%;
   	width: 50%;
