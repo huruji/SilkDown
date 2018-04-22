@@ -1,6 +1,6 @@
 <template>
-	<li class="navbar-item navbar-emoji" style="position:relative">
-		<button title="emoji" @click="showEmojiHandler">
+	<li class="navbar-item navbar-emoji" style="position:relative" >
+		<button title="emoji" @click="showEmojiHandler" :class="{'active': showEmoji}">
 			<i class="fa fa-meh-o"></i>
 		</button>
 		<div class="navbar-emoji-container" :style="{display: showEmoji? 'block': 'none'}">
