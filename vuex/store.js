@@ -46,7 +46,7 @@ export default new Vuex.Store({
 			localStorage.setItem('theme', state.theme);
 		},
 		INITILIZE(state){
-			state.theme = localStorage.getItem('theme') ? localStorage.getItem('theme') : 'theme-day';
+			state.theme = localStorage.getItem('theme') ? localStorage.getItem('theme') : 'theme-night';
 			localStorage.setItem('theme', state.theme);
 		},
 		SHOW_MENU (state) {
