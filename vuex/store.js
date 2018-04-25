@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import twemoji from 'twemoji'
 import md from './../src/markdownConf.js'
-
+import readme from './readme.js'
+import readmeZh from './readme_zh.js'
 
 Vue.use(Vuex)
 
@@ -34,7 +35,8 @@ export default new Vuex.Store({
 				current: true
 			}
 		],
-		theme: null
+		theme: null,
+		firstView: localStorage.getItem('first') !== null ?  false : true
 	},
 	mutations: {
 		CHANGE_THEME(state){
@@ -48,6 +50,24 @@ export default new Vuex.Store({
 		INITILIZE(state){
 			state.theme = localStorage.getItem('theme') ? localStorage.getItem('theme') : 'theme-night';
 			localStorage.setItem('theme', state.theme);
+			if(state.firstView && state.articleList.length === 1) {
+				let language = window.navigator.browserLanguage ? window.navigator.browserLanguage: window.navigator.language;
+				let text = "";
+				if(~language.indexOf('zh')){
+					text = readme;
+				} else {
+					text = readme;
+				}
+				for (let i = 0, len = state.articleList.length; i < len; i++) {
+					if (state.articleList[i].current) {
+						state.articleList[i].content = text
+					}
+				}
+
+				localStorage.setItem('first', false);
+				state.firstView = false;
+			}
+
 		},
 		SHOW_MENU (state) {
 			state.showMenu = !state.showMenu

@@ -9,6 +9,7 @@
 
 > :gem::gem::gem: **Download [Chrome extension]()**
 
+> [以中文查看](./README_ZH-CN.md)
 
 ## Features
 
