@@ -111,7 +111,7 @@ const text = '## 欢迎来到SilkDown' +
     '## Thanks' +
     '\n'+
     '\n'+
-    "This project is based on [markcook](https://github.com/jrainlau/markcook)，thanks for [jrainlau](https://github.com/jrainlau)'s work." +
+    "这个项目是基于项目[markcook](https://github.com/jrainlau/markcook)开发的，感谢[jrainlau](https://github.com/jrainlau)所做的工作。" +
     '\n'+
     '\n'+
     '## License' +
