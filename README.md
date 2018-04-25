@@ -1,5 +1,5 @@
 
-<p><img src="https://raw.githubusercontent.com/huruji/SilkDown/master/img/logo.png" style="text-align:center"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/huruji/SilkDown/master/img/logo.png"/></p>
 
 ![](http://oiwfsj4xe.bkt.clouddn.com/slogan.png)
 
