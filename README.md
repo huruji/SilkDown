@@ -32,8 +32,6 @@
 
 - Fullscreen preview/edit support
 
-![](https://www.google.com/drive/static/images/drive/logo-drive.png
-)
 
 ## ToDos
 
