@@ -18,6 +18,7 @@
 			<theme/>
 			<fullscreen/>
 			<preview/>
+			<chrome/>
 			<github/>
 			<question/>
 		</ul>
@@ -26,6 +27,7 @@
 
 <script>
 	import Bold from './../components/navBarItems/bold.vue'
+	import Chrome from './../components/navBarItems/chrome.vue'
 	import MyCode from './../components/navBarItems/code.vue'
 	import Emoji from './../components/navBarItems/emoji.vue'
 	import Fullscreen from './../components/navBarItems/fullscreen.vue'
@@ -53,6 +55,7 @@
 		},
 		components: {
 			Bold,
+			Chrome,
 			MyCode,
 			Emoji,
 			Fullscreen,
@@ -129,7 +132,7 @@
 				&:first-child {
 					border-right: 2px solid #00897B;
 				}
-				&:nth-last-child(2) {
+				&:nth-last-child(3) {
 					border-left: 2px solid #00897B;
 				}
 			}
@@ -157,7 +160,7 @@
 				&:first-child{
 					border-right: 2px solid #3e3c3c;
 				}
-				&:nth-last-child(2){
+				&:nth-last-child(3){
 					border-left: 2px solid #3e3c3c;
 				}
 			}
