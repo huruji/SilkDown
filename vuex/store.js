@@ -54,7 +54,7 @@ export default new Vuex.Store({
 				let language = window.navigator.browserLanguage ? window.navigator.browserLanguage: window.navigator.language;
 				let text = "";
 				if(~language.indexOf('zh')){
-					text = readme;
+					text = readmeZh;
 				} else {
 					text = readme;
 				}
