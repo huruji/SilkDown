@@ -67,6 +67,8 @@
     background-color: #f5f5f5;
     color: #616161;
     box-shadow: 4px 5px 3px #aaa;
+
+    
   }
 
   // theme-night
@@ -74,5 +76,21 @@
     background-color: #4d4d4d;
     color: #b3b3b3;
     box-shadow: 4px 5px 3px #1f1f1f;
+
+    pre{
+      background-color: #262626;
+      border-color: #1a1a1a;
+      color: #839496;
+    }
+
+    code{
+      background-color: #262626;
+      color: #657b83;
+    }
+
+    blockquote{
+      border-left-color: #262626;
+      background: #595959;
+    }
   }
 </style>
