@@ -7,7 +7,7 @@
 > :lollipop::lollipop::lollipop: **wow, Such a beautiful and powerful markdown editor**
 
 
-> :gem::gem::gem: **下载 [Chrome 插件](https://chrome.google.com/webstore/detail/silkdown/kojpddcdcddckmdnimmodeaejonfefee) [备用地址](http://oiwfsj4xe.bkt.clouddn.com/silkdown.crx)**
+> :gem::gem::gem: **下载 [Chrome 插件](https://chrome.google.com/webstore/detail/silkdown/kojpddcdcddckmdnimmodeaejonfefee) [备用地址](http://oiwfsj4xe.bkt.clouddn.com/silkdown.1.0.1.crx)**
 
 
 ## 特性
