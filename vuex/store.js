@@ -15,6 +15,14 @@ const createID = () => {
   return t
 }
 
+const saveID = (state) => {
+	let idArr = []
+	for (let i = 0, len = state.articleList.length; i < len; i++) {
+		idArr.push(state.articleList[i].id)
+		localStorage.setItem('idArr', idArr.join(','))
+	}
+}
+
 export default new Vuex.Store({
 	state: {
 		showMenu: true,
@@ -73,6 +81,12 @@ export default new Vuex.Store({
 		},
 		SAVE_TO_CACHE (state) {
 			localStorage.setItem('articleList', JSON.stringify(state.articleList))
+			// for (let i = 0, len = state.articleList.length; i < len; i++) {
+			// 	if (state.articleList[i].current) {
+			// 		localStorage.setItem(state.articleList[i].id, state.articleList[i].content)
+			// 		saveID(state)
+			// 	}
+			// }
 		},
 		READ_FROM_CACHE (state) {
 			for (let i = 0, len = state.articleList.length; i < len; i++) {
@@ -122,6 +136,24 @@ export default new Vuex.Store({
 				let articles = [];
 				articles = articles.concat(JSON.parse(localStorage.getItem('articleList')));
 				state.articleList = articles;
+			} else if (localStorage.getItem('idArr')) {
+				// 平滑过渡
+				state.articleList = null
+				let idArr = localStorage.getItem('idArr').split(',')
+				let articleArr = []
+				for (let i = 0, len = idArr.length; i < len; i++) {
+					let articleObj = {
+						id: '',
+						content: '',
+						current: false
+					}
+					articleObj.id = idArr[i]
+					articleObj.content = localStorage.getItem(idArr[i])
+					articleArr.push(articleObj)
+				}
+				state.articleList = articleArr
+				state.articleList[0].current = true
+				localStorage.setItem('articleList', JSON.stringify(state.articleList))
 			}
 		},
 		FULLSCREEN(state) {
