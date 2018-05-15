@@ -116,18 +116,14 @@ export default new Vuex.Store({
 		},
 		DELETE_THIS (state, index) {
 			if (state.articleList.length > 1) {
-				let idArr = localStorage.getItem('idArr').split(',')
-				let loc = idArr.indexOf(state.articleList[index].id)
-				idArr.splice(loc, 1)
-				localStorage.setItem('idArr', idArr)
 
-				localStorage.removeItem(state.articleList[index].id)
 				state.articleList.splice(index, 1)
 
-				for (let i = 0, len = state.articleList.length; i < len; i++) {
-					state.articleList[i].current = false
+				localStorage.setItem('articleList', JSON.stringify(state.articleList))
+
+				if(!state.articleList.some(e => e.current)){
+					state.articleList[0].current = true
 				}
-				state.articleList[0].current = true
 			}
 		},
 		READ_LIST_FROM_LOCAL (state) {
@@ -136,24 +132,6 @@ export default new Vuex.Store({
 				let articles = [];
 				articles = articles.concat(JSON.parse(localStorage.getItem('articleList')));
 				state.articleList = articles;
-			} else if (localStorage.getItem('idArr')) {
-				// 平滑过渡
-				state.articleList = null
-				let idArr = localStorage.getItem('idArr').split(',')
-				let articleArr = []
-				for (let i = 0, len = idArr.length; i < len; i++) {
-					let articleObj = {
-						id: '',
-						content: '',
-						current: false
-					}
-					articleObj.id = idArr[i]
-					articleObj.content = localStorage.getItem(idArr[i])
-					articleArr.push(articleObj)
-				}
-				state.articleList = articleArr
-				state.articleList[0].current = true
-				localStorage.setItem('articleList', JSON.stringify(state.articleList))
 			}
 		},
 		FULLSCREEN(state) {
