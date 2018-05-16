@@ -7,7 +7,7 @@
 > :lollipop::lollipop::lollipop: **wow, Such a beautiful and powerful markdown editor**
 
 
-> :gem::gem::gem: **Download [Chrome extension]()**
+> :gem::gem::gem: **Download [Chrome extension](https://chrome.google.com/webstore/detail/silkdown/kojpddcdcddckmdnimmodeaejonfefee)**
 
 > [以中文查看](./README_ZH-CN.md)
 
